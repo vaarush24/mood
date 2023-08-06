@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood Tracker</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>How are you feeling today?</h1>
+  <button id="happyButton">Happy</button>
+  <button id="sadButton">Sad</button>
+  <button id="neutralButton">Neutral</button>
+  <div id="result"></div>
+</div>
+<script>
+  const happyButton = document.getElementById('happyButton');
+  const sadButton = document.getElementById('sadButton');
+  const neutralButton = document.getElementById('neutralButton');
+  const resultDiv = document.getElementById('result');
+
+  happyButton.addEventListener('click', () => showResult('happy'));
+  sadButton.addEventListener('click', () => showResult('sad'));
+  neutralButton.addEventListener('click', () => showResult('neutral'));
+
+  function showResult(mood) {
+    resultDiv.textContent = `You are feeling ${mood} today.`;
+  }
+</script>
+</body>
+</html>
